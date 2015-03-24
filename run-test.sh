@@ -5,6 +5,10 @@ fastd -c 2/fastd.conf &
 F2=$!
 echo waiting a bit
 sleep 2
+ip link set up dev fast1
+ip link set up dev fast2
+echo waiting for IPv6 autoconfig
+sleep 2
 iperf -V -s &
 IPF1=$!
 sleep 1
